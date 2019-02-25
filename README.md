@@ -5,16 +5,16 @@
 Csv-base localization support.
 
 ### Static sources
-All "dynamic" sources can be added to current localization storage with `CsvLocalizer.AddStaticSource` method and `overwrite data` with same tokens. Cant be unloaded from `Localizer` instance.
+All "dynamic" sources can be added to current localization storage with `CsvLocalization.AddStaticSource` method and `overwrite data` with same tokens. Cant be unloaded from `CsvLocalization` instance.
 
 ### Dynamic sources.
-All "dynamic" sources can be added to current localization storage with `CsvLocalizer.AddDynamicSource` method and `override data` with same tokens. Can be unloaded with `Localizer.UnloadDynamics` method - all overrides will be reset to static sources if presents.
+All "dynamic" sources can be added to current localization storage with `CsvLocalization.AddDynamicSource` method and `override data` with same tokens. Can be unloaded with `CsvLocalization.UnloadDynamics` method - all overrides will be reset to static sources if presents.
 
 ### Request data.
-Localized data can be requested with `Localizer.Get` method.
+Localized data can be requested with `CsvLocalization.Get` method.
 
 ### Plurals support.
-Localized data with plurals support can be requested with `Localizer.GetPlural` method. Tokens (first column) should be properly named:
+Localized data with plurals support can be requested with `CsvLocalization.GetPlural` method. Tokens (first column) should be properly named:
 * 1 item - `xxx-plural-one` where `xxx` - normal token.
 * 2-4 items - `xxx-plural-two` where `xxx` - normal token.
 * 0 or > 4 items - `xxx-plural-many` where `xxx` - normal token.
