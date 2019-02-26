@@ -1,3 +1,4 @@
+[![license](https://img.shields.io/github/license/Leopotam/localization.svg)](https://github.com/Leopotam/localization/blob/develop/LICENSE.md)
 # Localization support
 [Github repo of localization support](https://github.com/Leopotam/localization).
 
