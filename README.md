@@ -20,7 +20,7 @@ Localized data with plurals support can be requested with `GetPlural` method. To
 * 0 or > 4 items - `xxx-plural-many` where `xxx` - normal token.
 
 # License
-The software released under the terms of the [MIT license](./LICENSE). Enjoy.
+The software released under the terms of the [MIT license](./LICENSE.md). Enjoy.
 
 # Donate
 Its free opensource software, but you can buy me a coffee:
