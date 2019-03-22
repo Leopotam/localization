@@ -1,0 +1,17 @@
+{
+    "name": "com.leopotam.localization",
+    "author": "Leopotam",
+    "displayName": "Leopotam Localization",
+    "description": "Localization support.",
+    "unity": "2018.3",
+    "version": "2019.3.22",
+    "keywords": [
+        "localization",
+        "performance"
+    ],
+    "dependencies": {},
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Leopotam/localization.git"
+    }
+}
