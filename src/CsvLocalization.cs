@@ -9,7 +9,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text.RegularExpressions;
 
-namespace LeopotamGroup.Localization {
+namespace Leopotam.Localization {
     /// <summary>
     /// Localize - helper for localization. Supports dynamic overriding of localization tokens with rollback.
     /// </summary>
