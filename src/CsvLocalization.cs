@@ -1,4 +1,4 @@
-﻿// ----------------------------------------------------------------------------
+// ----------------------------------------------------------------------------
 // The MIT License
 // Localization support https://github.com/Leopotam/localization
 // Copyright (c) 2017-2019 Leopotam <leopotam@gmail.com>
@@ -39,11 +39,16 @@ namespace Leopotam.Localization {
         int _langId;
 
         /// <summary>
+        /// Default constructor with "English" as default language and "KEY" as default key-column name.
+        /// </summary>
+        public CsvLocalization () : this ("English", "KEY") { }
+
+        /// <summary>
         /// Constructor.
         /// </summary>
         /// <param name="language">Language on start.</param>
         /// <param name="headerToken">Header-line value at first column (key).</param>
-        public CsvLocalization (string language = "English", string headerToken = "KEY") {
+        public CsvLocalization (string language, string headerToken) {
             _headerToken = headerToken;
             _langId = -1;
             _language = language;
