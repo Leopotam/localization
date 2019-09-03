@@ -175,7 +175,7 @@ namespace Leopotam.Localization {
 
         void FindLangId () {
             string[] retVals = null;
-            if (string.IsNullOrEmpty (_language)) {
+            if (!string.IsNullOrEmpty (_language)) {
                 if (!_dynamics.TryGetValue (_headerToken, out retVals)) {
                     _statics.TryGetValue (_headerToken, out retVals);
                 }
