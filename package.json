@@ -13,5 +13,8 @@
     "repository": {
         "type": "git",
         "url": "https://github.com/Leopotam/localization.git"
+    },
+    "publishConfig": {
+        "registry": "https://npm.leopotam.com"
     }
 }
