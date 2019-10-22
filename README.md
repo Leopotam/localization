@@ -2,6 +2,40 @@
 # Localization support
 [Github repo of localization support](https://github.com/Leopotam/localization).
 
+# Installation
+
+## As unity module
+This repository can be installed as unity module directly from git url. In this way new line should be added to `Packages/manifest.json`:
+```
+"com.leopotam.localization": "https://github.com/Leopotam/localization.git",
+```
+By default last released version will be used. If you need trunk / developing version then `develop` name of branch should be added after hash:
+```
+"com.leopotam.localization": "https://github.com/Leopotam/localization.git#develop",
+```
+
+## As unity module from npm registry (Experimental)
+This repository can be installed as unity module from external npm registry with support of different versions. In this way new block should be added to `Packages/manifest.json` right after opening `{` bracket:
+```json
+  "scopedRegistries": [
+    {
+      "name": "Leopotam",
+      "url": "https://npm.leopotam.com",
+      "scopes": [
+        "com.leopotam"
+      ]
+    }
+  ],
+```
+After this operation registry can be installed from list of packages from standard unity module manager.
+> **Important!** Url can be changed later, check actual url at `README`.
+
+## As source
+If you can't / don't want to use unity modules, code can be downloaded as sources archive of required release from [Releases page](`https://github.com/Leopotam/localization/releases`).
+
+
+# Classes
+
 ## CsvLocalization
 Csv-base localization support.
 

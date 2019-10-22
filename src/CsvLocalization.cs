@@ -41,7 +41,7 @@ namespace Leopotam.Localization {
         /// <summary>
         /// Default constructor with "English" as default language and "KEY" as default key-column name.
         /// </summary>
-#if ENABLE_IL2CPP
+#if UNITY_2019_1_OR_NEWER
         [UnityEngine.Scripting.Preserve]
 #endif
         public CsvLocalization () : this ("English", "KEY") { }
