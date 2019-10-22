@@ -4,7 +4,7 @@
     "displayName": "Leopotam Localization",
     "description": "Localization support.",
     "unity": "2019.1",
-    "version": "2019.10.22-preview",
+    "version": "2019.10.22",
     "keywords": [
         "localization",
         "performance"
