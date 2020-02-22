@@ -28,8 +28,8 @@ namespace Leopotam.Localization {
             }
         }
 
-        readonly Regex CsvMultilineFixRegex = new Regex ("\"([^\"]|\"\"|\\n)*\"");
-        readonly Regex CsvParseRegex = new Regex ("(?<=^|,)(\"(?:[^\"]|\"\")*\"|[^,]*)");
+        static readonly Regex CsvMultilineFixRegex = new Regex ("\"([^\"]|\"\"|\\n)*\"");
+        static readonly Regex CsvParseRegex = new Regex ("(?<=^|,)(\"(?:[^\"]|\"\")*\"|[^,]*)");
         readonly List<string> _csvBuffer = new List<string> (32);
         readonly Dictionary<string, string[]> _statics = new Dictionary<string, string[]> (256);
         readonly Dictionary<string, string[]> _dynamics = new Dictionary<string, string[]> (256);
@@ -140,6 +140,7 @@ namespace Leopotam.Localization {
                 while (reader.Peek () != -1) {
                     var line = reader.ReadLine ();
                     _csvBuffer.Clear ();
+                    // ReSharper disable once AssignNullToNotNullAttribute
                     foreach (Match m in CsvParseRegex.Matches (line)) {
                         var part = m.Value.Trim ();
                         if (part.Length > 0) {
@@ -168,7 +169,7 @@ namespace Leopotam.Localization {
                     }
                 }
             }
-            if (!storage.TryGetValue (_headerToken, out var header)) {
+            if (!storage.TryGetValue (_headerToken, out _)) {
                 storage.Clear ();
                 _langId = -1;
                 return;
