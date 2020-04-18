@@ -1,7 +1,7 @@
 // ----------------------------------------------------------------------------
 // The MIT License
 // Localization support https://github.com/Leopotam/localization
-// Copyright (c) 2017-2019 Leopotam <leopotam@gmail.com>
+// Copyright (c) 2017-2020 Leopotam <leopotam@gmail.com>
 // ----------------------------------------------------------------------------
 
 using System;
@@ -87,17 +87,25 @@ namespace Leopotam.Localization {
             if (count < 0) {
                 count = -count;
             }
+            count %= 100;
             string retVal;
-            if (count == 1) {
-                retVal = Get (string.Format ("{0}-plural-one", token), false);
-                return retVal ?? (returnTokenOnFail ? token : null);
+            if (count > 10 && count < 20) {
+                retVal = Get ($"{token}-plural-many", returnTokenOnFail);
+            } else {
+                count %= 10;
+                switch (count) {
+                    case 1:
+                        retVal = Get ($"{token}-plural-one", returnTokenOnFail);
+                        break;
+                    case int _ when count > 1 && count < 5:
+                        retVal = Get ($"{token}-plural-two", returnTokenOnFail);
+                        break;
+                    default:
+                        retVal = Get ($"{token}-plural-many", returnTokenOnFail);
+                        break;
+                }
             }
-            if (count > 1 && count < 5) {
-                retVal = Get (string.Format ("{0}-plural-two", token), false);
-                return retVal ?? (returnTokenOnFail ? token : null);
-            }
-            retVal = Get (string.Format ("{0}-plural-many", token), false);
-            return retVal ?? (returnTokenOnFail ? token : null);
+            return retVal;
         }
 
         /// <summary>

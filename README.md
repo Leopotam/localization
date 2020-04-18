@@ -2,6 +2,8 @@
 # Localization support
 [Github repo of localization support](https://github.com/Leopotam/localization).
 
+> C#7.3 or above required for this library.
+
 # Installation
 
 ## As unity module
@@ -36,6 +38,46 @@ Localized data with plurals support can be requested with `GetPlural` method. To
 * 1 item - `xxx-plural-one` where `xxx` - normal token.
 * 2-4 items - `xxx-plural-two` where `xxx` - normal token.
 * 0 or > 4 items - `xxx-plural-many` where `xxx` - normal token.
+```csharp
+// loc - instance of CsvLocalization.
+for (var i = 0; i < 25; i++) {
+    loc.Language = "English";
+    var enHour = $"{loc.GetPlural (i, "hour")}";
+    var enDay = $"{loc.GetPlural (i, "day")}";
+    loc.Language = "Russian";
+    var ruHour = $"{loc.GetPlural (i, "hour")}";
+    var ruDay = $"{loc.GetPlural (i, "day")}";
+    Debug.Log ($"{i}: {enDay},{enHour} / {ruDay},{ruHour}");
+}
+```
+Output:
+```
+0: days,hours / дней,часов
+1: day,hour / день,час
+2: days,hours / дня,часа
+3: days,hours / дня,часа
+4: days,hours / дня,часа
+5: days,hours / дней,часов
+6: days,hours / дней,часов
+7: days,hours / дней,часов
+8: days,hours / дней,часов
+9: days,hours / дней,часов
+10: days,hours / дней,часов
+11: days,hours / дней,часов
+12: days,hours / дней,часов
+13: days,hours / дней,часов
+14: days,hours / дней,часов
+15: days,hours / дней,часов
+16: days,hours / дней,часов
+17: days,hours / дней,часов
+18: days,hours / дней,часов
+19: days,hours / дней,часов
+20: days,hours / дней,часов
+21: day,hour / день,час
+22: days,hours / дня,часа
+23: days,hours / дня,часа
+24: days,hours / дня,часа
+```
 
 # License
 The software released under the terms of the [MIT license](./LICENSE.md). Enjoy.
